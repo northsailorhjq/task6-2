@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	
+	<package name="login" namespace="/loginns"
+		extends="struts-default">
+	<action name="LoginAction"
+		class="com.jikexueyuan.action.LoginAction">
+	<result name="success" type="dispatcher">/main/main.jsp</result>
+	<result name="error" type="dispatcher">/index.jsp</result></action>
+	<action name="LogoutAction"
+		class="com.jikexueyuan.action.LogoutAction">
+	<result name="success" type="dispatcher">/index.jsp</result></action></package>
+	<package name="control" namespace="/controls"
+		extends="struts-default">
+	<action name="GetPeoByNameAction"
+		class="com.jikexueyuan.action.GetPeoByNameAction">
+	<result name="success" type="dispatcher">
+		/show/showTitle.jsp
+	</result>
+	</action>
+	<action name="GetPeoByTitleAction"
+		class="com.jikexueyuan.action.GetPeoByTitleAction">
+	<result name="success" type="dispatcher">
+		/show/showContent.jsp
+	</result>
+	<result name="error" type="dispatcher">/service/fail.jsp</result></action>
+	<action name="GetPeoByContentAction"
+		class="com.jikexueyuan.action.GetPeoByContentAction">
+	<result name="success" type="dispatcher">/show/showAll.jsp</result>
+	</action></package></struts>    
